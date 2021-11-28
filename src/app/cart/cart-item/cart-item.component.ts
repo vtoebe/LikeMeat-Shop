@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input, OnChanges, Output, EventEmitter} from '@angular/core';
 import { PersistenceService } from 'src/app/persistence.service';
 
 @Component({
@@ -12,31 +12,34 @@ export class CartItemComponent implements OnInit {
   @Input() price:  number = 0;
   @Input() img:  string = '';
   @Input() qtt:  number = 1;
+  @Output() updateQuantity = new EventEmitter();
+  @Output() removeItem = new EventEmitter();
 
   constructor(private persist: PersistenceService) { }
   items: any;
 
   ngOnInit(): void {
-    this.items = this.persist.loadItems();
+    this.items = this.persist.loadItemsFromStorage();
   }
 
-
-  decrementQtt(id: string, qtt: number){
+  downQtt(id: string){
     let decProd = this.persist.findItem(id)
-    if (decProd.qtt = 1){
-      console.log('vai remover')
+    if (decProd.qtt == 1){
       this.removeFromCart(id)
-    } else { console.log('faz update'); this.persist.updateQtt(id, qtt-1)}
-
+    } else { this.persist.minusQtt(id)}
+    this.updateQuantity.emit()
   }
 
-  incrementQtt(id: string, qtt: number){
-    this.persist.updateQtt(id, qtt+1)
+  upQtt(id: string){
+    this.persist.addQtt(id)
+    this.updateQuantity.emit()
   }
 
   removeFromCart(id:string){
     this.persist.removeItem(id);
-    this.items = this.persist.loadItems();
+    this.removeItem.emit()
+
+    // window.location.reload();
   }
 
 }

@@ -5,40 +5,52 @@ import { Product } from './model/product';
   providedIn: 'root'
 })
 export class PersistenceService {
+    items: any = [];
+    constructor() { }
 
-  constructor() { }
-
-  addToSessionStorage(prod: Product){
-    let cartItems: Product[] = JSON.parse(sessionStorage.getItem("products")?? "[]")
+  addToLocalStorage(prod: Product){
+    let cartItems: Product[] = []
     cartItems = [...cartItems, prod];
-    sessionStorage.setItem(prod.id, JSON.stringify({id: prod.id, name: prod.name, price: prod.price, qtt: 1, img: prod.img[0]}));
+    localStorage.setItem(prod.id, JSON.stringify({id: prod.id, name: prod.name, price: prod.price, qtt: 1, img: prod.img[0]}));
   }
 
   findItem(id: string){
-    let findProd = JSON.parse(sessionStorage.getItem(id) ?? "[]")
+    let findProd = JSON.parse(localStorage.getItem(id) ?? "[]")
     console.log(findProd)
     return findProd
   }
 
-  loadItems(): Array<string>{
-    let items: any = [];
-    for (let key of Object.keys(sessionStorage)){
-      items = [...items, sessionStorage.getItem(key)]
+  loadItemsFromStorage(): Array<any>{
+    const items: any[] = []
+    for (let key of Object.keys(localStorage)){
+        items.push(JSON.parse(localStorage.getItem(key) ?? "[]"))
     }
-    return  items;
+    console.log("loadItemsFromStorage", items)
+    return items;
   }
 
-  updateQtt(id: string, newqtt: number){
+  getTotal() : number{
+    const items = this.loadItemsFromStorage();
+    let sumCosts = items.map((el) => el.price * el.qtt) || [0]
+    const total = sumCosts.length > 0? sumCosts.reduce(function(acc: any, curr: any){return acc + curr}): 0;
+    return total
+  }
+
+  addQtt(id: string){
     let foundProd = this.findItem(id);
-    sessionStorage.setItem(id, JSON.stringify({...foundProd, qtt: newqtt}))
+    localStorage.setItem(id, JSON.stringify({...foundProd, qtt: foundProd.qtt +=1}))
+  }
+
+  minusQtt(id: string){
+    let foundProd = this.findItem(id);
+    localStorage.setItem(id, JSON.stringify({...foundProd, qtt: foundProd.qtt -=1}))
   }
 
   removeItem(id: string):void{
-    sessionStorage.removeItem(id);
+    localStorage.removeItem(id)
   }
 
   clearCart():void{
-    sessionStorage.clear();
+    localStorage.clear();
   }
-
 }

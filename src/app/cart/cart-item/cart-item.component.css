@@ -1,7 +1,36 @@
 .updateqtt {
-  width: 30px;
+  width: 1fr;
 }
 
 .qttNumber {
   width: 50px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-template-areas:
+    "img img name name"
+    "img img price price"
+    "img img btns btns";
+}
+
+img {
+  grid-area: img;
+}
+
+.item-btn {
+  width: 100%;
+}
+
+.prod-name {
+  grid-area: name;
+}
+
+.prod-price {
+  grid-area: price;
+}
+
+.cart-input {
+  grid-area: btns;
 }

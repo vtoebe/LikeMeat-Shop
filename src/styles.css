@@ -1,5 +1,6 @@
 :root {
   --bgc: #f01e23;
+  --clear: #ffffff4d;
 }
 
 * {
@@ -21,13 +22,11 @@ body {
 
 .default-btn {
   background-color: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.302);
+  border: 2px solid var(--clear);
   border-radius: 15px;
   cursor: pointer;
-  display: inline-block;
   font-size: 1em;
   font-weight: 600;
-  line-height: normal;
   min-height: 20px;
   width: 50%;
   outline: none;
@@ -43,7 +42,7 @@ body {
 
 .default-btn:hover {
   color: #fff;
-  background-color: rgba(255, 255, 255, 0.302);
+  background-color: var(--clear);
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
@@ -62,7 +61,7 @@ input {
   border: none;
   outline: none;
   background-color: var(--dark);
-  border-bottom: 3px solid var(--primary);
+  border-bottom: 3px solid var(--clear);
   color: var(--terciary);
 
 }

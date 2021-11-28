@@ -26,7 +26,7 @@ export class ProductWrapperComponent implements OnInit {
   addToCart(id: string): void {
     console.log(id)
     this.cartItem = this.productService.productList.find(element => element.id == id)
-    this.persist.addToSessionStorage(this.cartItem);
+    this.persist.addToLocalStorage(this.cartItem);
   }
 
 }

@@ -1,9 +1,12 @@
 <div class="cart-item">
   <img src="{{img}}" alt="">
-  <p>{{name}}</p>
-  <p>{{price}}</p>
-  <button class="decrement" (click)="decrementQtt(id, qtt)">-</button>
-  <input type="number" [value]="qtt" [(ngModel)]="qtt">
-  <button class="increment" (click)="incrementQtt(id, qtt)">+</button>
-  <button class="default-btn" (click)="removeFromCart(id)">remove</button>
+  <p class="prod-name">{{name}}</p>
+  <p class="prod-price">{{price | currency: 'USD'}}</p>
+  <div class="cart-input">
+    <button class="default-btn updateqtt" (click)="downQtt(id)">-</button>
+    <input type="number" [value]="qtt" class="qttNumber" #itemQtt>
+    <button class="default-btn updateqtt" (click)="upQtt(id)">+</button>
+
+    <button class="default-btn item-btn" (click)="removeFromCart(id)">remove</button>
+  </div>
 </div>

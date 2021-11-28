@@ -1,3 +1,4 @@
+import { PersistenceService } from 'src/app/persistence.service';
 import { Injectable } from '@angular/core';
 import { Product } from './model/product';
 
@@ -92,7 +93,11 @@ export class ProductService {
       img: ['/assets/img/smoked-ssg.png', '/assets/img/smkssg2.png', '/assets/img/smkssg3.png']},
   ];
 
-  constructor() {
+  cartItems: Array<string> = [];
+
+  constructor(private persist: PersistenceService) {
+    this.cartItems = persist.loadItemsFromStorage();
+    console.log("prod service constructor", this.cartItems)
   }
 
   findProduct(id: string) {

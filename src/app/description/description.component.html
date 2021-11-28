@@ -8,8 +8,7 @@
     <img class="img-info" src="{{img[1]}}" alt="">
     <div class="info">
       <p>{{description}}</p>
-      <p class="price">{{price | currency: 'USD'}} |
-        {{price*5 | currency: 'BRL'}}
+      <p class="price">{{price | currency: 'USD'}}
       </p><br />
       <button class="default-btn" (click)="addToCart(id)">Add to Cart</button>
     </div>

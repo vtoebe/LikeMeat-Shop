@@ -34,7 +34,7 @@ export class DescriptionComponent implements OnInit {
 
  addToCart(id: string): void {
   console.log(id)
-  this.persist.addToSessionStorage(this.prod);
+  this.persist.addToLocalStorage(this.prod);
 }
 
 }
