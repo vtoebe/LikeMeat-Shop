@@ -95,18 +95,7 @@ export class ProductService {
   constructor() {
   }
 
-  // filterById(idToLookFor: string){
-  //   for (const element of this.productList){
-  //     console.log(element)
-  //     if (element.id == idToLookFor) {
-  //       return element
-  //     }
-  //   }
-  // }
-
-  async findProduct(id: string) {
-    // console.log(this.filterById(id))
-    // return this.filterById(id);
+  findProduct(id: string) {
     const prod = this.productList.find(element => element.id == id);
     return prod
   }

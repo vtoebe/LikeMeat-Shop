@@ -29,8 +29,4 @@ export class ProductWrapperComponent implements OnInit {
     this.persist.addToSessionStorage(this.cartItem);
   }
 
-  getCartList(){
-    
-  }
-
 }
