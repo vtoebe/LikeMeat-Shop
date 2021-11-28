@@ -1,0 +1,24 @@
+.header {
+  max-width: 100%;
+  background-color: #C62828;
+  height: 30px;
+  padding: 24px;
+  margin-bottom: 48px;
+}
+
+.logo {
+  fill: #ffffff;
+  width: 2px;
+  height: 2px;
+}
+
+h1 {
+  display: inline-block;
+  color: #fff;
+  padding-right: 24px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}

@@ -1,0 +1,49 @@
+h1 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.prod-name,
+.prod-info {
+  display: grid;
+  grid-template-areas: "left right";
+  width: 100%;
+  text-align: center;
+  height: 300px;
+}
+
+.prod-name p {
+  grid-area: right;
+  align-self: center;
+  justify-self: start;
+}
+
+.img-name {
+  grid-area: left;
+  max-height: 300px;
+  max-width: 200px;
+}
+
+.prod-info {
+  grid-area: left;
+  align-self: center;
+  text-align: justify;
+}
+
+.prod-info p,
+.default-btn {
+  display: inline-block;
+}
+
+.img-info {
+  max-height: 300px;
+  grid-area: right;
+}
+
+.based {
+  text-align: center;
+}
+
+.img-bottom {
+  max-width: 100%;
+}

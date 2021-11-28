@@ -1,0 +1,20 @@
+<div class="description-container">
+  <h1>{{firstLine}}</h1>
+  <div class="prod-name">
+    <img class="img-name" src="{{img[0]}}" alt="">
+    <p> {{name}}</p>
+  </div>
+  <div class="prod-info">
+    <img class="img-info" src="{{img[1]}}" alt="">
+    <div class="info">
+      <p>{{description}}</p>
+      <p class="price">{{price | currency: 'USD'}} |
+        {{price*5 | currency: 'BRL'}}
+      </p><br />
+      <button class="default-btn" (click)="addToCart(id)">Add to Cart</button>
+    </div>
+
+  </div>
+  <p class="based">{{based}}</p>
+  <img src="{{img[2]}}" alt="" class="img-bottom">
+</div>

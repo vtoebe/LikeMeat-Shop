@@ -1,0 +1,7 @@
+<div class="item">
+  <img src="{{img[0]}}" alt="">
+  <h1 class="name">{{name}}</h1>
+  <p class="price">{{price | currency: 'USD'}} | {{price*5 | currency: 'BRL'}}</p>
+  <button class="default-btn" [routerLink]="['/description', id]">Details</button>
+  <button class="default-btn" (click)="addToCart(id)">Add to Cart</button>
+</div>
