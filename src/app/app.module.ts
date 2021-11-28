@@ -10,7 +10,6 @@ import { CartComponent } from './cart/cart.component';
 import { DeliveryComponent } from './delivery/delivery.component';
 import { ProductWrapperComponent } from './home/product-wrapper/product-wrapper.component';
 import { CartItemComponent } from './cart/cart-item/cart-item.component';
-import { CartSummaryComponent } from './cart/cart-summary/cart-summary.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +20,7 @@ import { CartSummaryComponent } from './cart/cart-summary/cart-summary.component
     CartComponent,
     DeliveryComponent,
     ProductWrapperComponent,
-    CartItemComponent,
-    CartSummaryComponent
+    CartItemComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,4 @@
-<p>cart works!</p>
+<app-cart-item *ngFor="let item of items" [name]="item.name" [price]="item.price" [qtt]="item.qtt" [img]="item.img"></app-cart-item>
+
+Total: {{total | currency: 'USD'}} | {{total | currency: 'BRL'}}
+<button class="default-btn" routerLink="/checkout">Proceed to Checkout </button>

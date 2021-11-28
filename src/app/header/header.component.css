@@ -1,9 +1,9 @@
 .header {
+  position: fixed;
   max-width: 100%;
   background-color: #C62828;
   height: 30px;
   padding: 24px;
-  margin-bottom: 48px;
 }
 
 .logo {
@@ -21,4 +21,14 @@ h1 {
 a {
   color: #fff;
   text-decoration: none;
+}
+
+.cart {
+  float: right;
+}
+
+.cart-icon {
+  color: #fff;
+  width: 20px;
+  height: 20px;
 }
