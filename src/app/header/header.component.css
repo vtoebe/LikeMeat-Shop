@@ -1,15 +1,9 @@
 .header {
   position: fixed;
   max-width: 100%;
-  background-color: #C62828;
   height: 30px;
   padding: 24px;
-}
-
-.logo {
-  fill: #ffffff;
-  width: 2px;
-  height: 2px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.302);
 }
 
 h1 {

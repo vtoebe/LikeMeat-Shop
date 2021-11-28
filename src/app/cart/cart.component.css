@@ -1,0 +1,12 @@
+.empty-car {
+  width: 100%;
+  height: 800px;
+  background-image: url(/assets/img/sad.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  padding-top: 10%;
+  text-align: center;
+}
