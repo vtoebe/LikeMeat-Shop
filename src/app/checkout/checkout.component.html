@@ -1,13 +1,9 @@
-<form [formGroup]="form" (ngSubmit)="submit()">
-  <div class="checkout-container">
-    <a routerLink="/cart">
-      <img src="/assets/img/back.png" alt=""><br />
-      <p>Go back</p>
-    </a>
-
-    <p class="shopping-data"></p>
-    <p class="shopping-data"></p>
-
+<div class="checkout-container" *ngIf="!_CHECKED">
+  <a routerLink="/cart">
+    <img src="/assets/img/back.png" alt=""><br />
+    <p>Go back</p>
+  </a>
+  <form [formGroup]="form" (ngSubmit)="submit()">
     <div class="form-group">
       <input type="text" id="name" required formControlName="name" placeholder="Full Name" />
     </div>
@@ -31,5 +27,10 @@
 
     </div>
     <button class="default-btn order" type="submit" [disabled]="!form.valid">Finish Purchase</button>
-  </div>
-</form>
+  </form>
+</div>
+
+<div class="finished-purchase" *ngIf="_CHECKED">
+  <h1 class="thickfont bigsize">Thank you for you purchase!</h1>
+  <h2 class="midfont bigsize">Hope you Like it!</h2>
+</div>

@@ -1,5 +1,5 @@
 .updateqtt {
-  width: 1fr;
+  width: 100%
 }
 
 .qttNumber {
@@ -8,14 +8,15 @@
 
 .cart-item {
   display: grid;
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 200px 1fr;
   grid-template-areas:
-    "img img name name"
-    "img img price price"
-    "img img btns btns";
+    "img name name btns"
+    "img price price btns";
+  max-height: 200px;
 }
 
 img {
+  max-height: 200px;
   grid-area: img;
 }
 
@@ -25,6 +26,7 @@ img {
 
 .prod-name {
   grid-area: name;
+  text-align: start;
 }
 
 .prod-price {
@@ -33,4 +35,9 @@ img {
 
 .cart-input {
   grid-area: btns;
+  display: inline-block;
+}
+
+.qtt {
+  display: inline-block;
 }

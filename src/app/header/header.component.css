@@ -1,16 +1,19 @@
 .header {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
   position: fixed;
-  max-width: 100%;
-  height: 30px;
-  padding: 24px;
+  width: 100%;
+  height: 50px;
+  padding: 10px 0 10px 15px;
   background-color: var(--bgc);
   border-bottom: 1px solid rgba(255, 255, 255, 0.302);
+  align-items: center;
+  justify-items: start;
 }
 
 h1 {
-  display: inline-block;
   color: #fff;
-  padding-right: 24px;
+  justify-self: start;
 }
 
 a {
@@ -19,11 +22,16 @@ a {
 }
 
 .cart {
-  float: right;
+  padding-right: 15px;
+  justify-self: end;
 }
 
 .cart-icon {
   color: #fff;
   width: 20px;
   height: 20px;
+}
+
+span {
+  padding-left: 5px;
 }

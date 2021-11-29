@@ -1,12 +1,13 @@
 <div class="cart-item">
   <img src="{{img}}" alt="">
-  <p class="prod-name">{{name}}</p>
-  <p class="prod-price">{{price | currency: 'USD'}}</p>
-  <div class="cart-input">
-    <button class="default-btn updateqtt" (click)="downQtt(id)">-</button>
-    <input type="number" [value]="qtt" class="qttNumber" #itemQtt>
-    <button class="default-btn updateqtt" (click)="upQtt(id)">+</button>
+  <p class="prod-name midfont bigsize">{{name}}</p>
+  <p class="prod-price midfont bigsize">{{price | currency: 'USD'}} <input type="number" [value]="qtt" class="qttNumber" #itemQtt></p>
 
+  <div class="cart-input">
+    <div class="qtt">
+      <input type="button" class="default-btn updateqtt up midsize" (click)="downQtt(id)" value="-">
+      <input type="button" class="default-btn updateqtt down midsize" (click)="upQtt(id)" value="+">
+    </div>
     <button class="default-btn item-btn" (click)="removeFromCart(id)">remove</button>
   </div>
 </div>

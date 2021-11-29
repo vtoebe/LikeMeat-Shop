@@ -22,6 +22,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this._CHECKED = false;
   }
 
   submit(){
@@ -32,6 +33,8 @@ export class CheckoutComponent implements OnInit {
     const form = new Client(name, address, phone);
     console.log(form)
     this.persist.clearCart()
+
+    this._CHECKED = true;
   }
 
   get name() { return this.form.get('name')}

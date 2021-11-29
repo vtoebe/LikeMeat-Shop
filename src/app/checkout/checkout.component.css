@@ -1,5 +1,6 @@
 .checkout-container {
   margin-top: 30px;
+  height: 90vh;
 }
 
 a,
@@ -14,7 +15,13 @@ a>p {
 
 .pop-msg {
   text-align: center;
-  color: black;
+  color: rgb(29, 26, 26);
   background-color: var(--clear);
   font-weight: strong;
+}
+
+.finished-purchase {
+  width: 100%;
+  padding-top: 10%;
+  text-align: center;
 }

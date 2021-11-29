@@ -1,13 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Londrina+Shadow&family=Oi&family=Quicksand:wght@300;400;700&family=Salsa&display=swap');
+
 :root {
   --bgc: #f01e23;
   --clear: #ffffff4d;
+  --fontfam: 'Quicksand';
+  --thickfont: 'Salsa', cursive;
+  --midfont: 'Dongle', sans-serif;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-size: 1.1rem;
   color: white;
+  font-family: var(--fontfam);
 }
 
 body {
@@ -25,8 +32,9 @@ body {
   border: 2px solid var(--clear);
   border-radius: 15px;
   cursor: pointer;
-  font-size: 1em;
-  font-weight: 600;
+  font-size: 1.3em;
+  font-family: var(--fontfam);
+  font-weight: bold;
   min-height: 20px;
   width: 50%;
   outline: none;
@@ -74,4 +82,20 @@ input::placeholder {
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
+}
+
+.thickfont {
+  font-family: var(--thickfont);
+}
+
+.bigsize {
+  font-size: 50px;
+}
+
+.midfont {
+  font-family: var(--midfont);
+}
+
+.midsize {
+  font-size: 30px;
 }
