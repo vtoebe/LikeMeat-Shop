@@ -1,0 +1,20 @@
+.checkout-container {
+  margin-top: 30px;
+}
+
+a,
+a>p {
+  padding-left: 15px;
+  margin-bottom: 20px;
+}
+
+.order {
+  width: 100%;
+}
+
+.pop-msg {
+  text-align: center;
+  color: black;
+  background-color: var(--clear);
+  font-weight: strong;
+}

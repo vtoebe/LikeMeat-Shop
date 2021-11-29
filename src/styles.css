@@ -53,17 +53,22 @@ body {
 }
 
 input {
+  display: block;
   text-align: center;
-  width: 300px;
+  width: 100%;
   height: 50px;
-  font-size: 50px;
+  font-size: 20px;
   border-width: 0px;
   border: none;
   outline: none;
-  background-color: var(--dark);
-  border-bottom: 3px solid var(--clear);
-  color: var(--terciary);
+  background-color: var(--bgc);
+  border-bottom: 1px solid var(--clear);
+  color: var(--clear);
+  margin-bottom: 15px;
+}
 
+input::placeholder {
+  color: var(--clear)
 }
 
 input::-webkit-outer-spin-button,

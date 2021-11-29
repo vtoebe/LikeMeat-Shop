@@ -1,0 +1,35 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="checkout-container">
+    <a routerLink="/cart">
+      <img src="/assets/img/back.png" alt=""><br />
+      <p>Go back</p>
+    </a>
+
+    <p class="shopping-data"></p>
+    <p class="shopping-data"></p>
+
+    <div class="form-group">
+      <input type="text" id="name" required formControlName="name" placeholder="Full Name" />
+    </div>
+    <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+      <div class="pop-msg" *ngIf="name?.errors?.['required']">You need to enter your name before proceeding.</div>
+      <div class="pop-msg" *ngIf="name?.errors?.['minlength']">The name should have at least 5 characters</div>
+    </div>
+
+    <div class="form-group">
+      <input type="text" id="address" required formControlName="address" placeholder="Address: Street, number - City/State - Zipcode" />
+    </div>
+    <div *ngIf="address?.invalid && (address?.dirty || address?.touched)">
+      <div class="pop-msg" *ngIf="address?.errors?.['required']">You need to enter your address before proceeding.</div>
+      <div class="pop-msg" *ngIf="address?.errors?.['minlength']">Please check your address. It should have at least 10 characters.</div>
+    </div>
+    <div class="form-group">
+      <input type="text" id="phone" required formControlName="phone" placeholder="Phone number: +00(00)00000-0000 " />
+    </div>
+    <div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)">
+      <div class="pop-msg" *ngIf="phone?.errors?.['required']">You need to enter your phone number before proceeding.</div>
+
+    </div>
+    <button class="default-btn order" type="submit" [disabled]="!form.valid">Finish Purchase</button>
+  </div>
+</form>
